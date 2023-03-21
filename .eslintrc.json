@@ -9,6 +9,7 @@
     "@typescript-eslint/no-unused-vars": "off",
     "@typescript-eslint/prefer-readonly": "off",
     "@typescript-eslint/consistent-type-imports": "off",
-    "@typescript-eslint/method-signature-style": "off"
+    "@typescript-eslint/method-signature-style": "off",
+    "@typescript-eslint/no-extraneous-class": "off"
   }
 }
