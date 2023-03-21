@@ -2,6 +2,7 @@
 import { v4 as uuidV4 } from 'uuid'
 import BaseEntity from '../../@shared/domain/entity/base-entity'
 import Id from '../../@shared/domain/value-object/id-value-object'
+import AccountValidatorFactory from '../factory/account-validator-factory'
 
 interface AccountProperties {
   id?: Id
@@ -34,6 +35,12 @@ export default class Account extends BaseEntity {
     this._description = properties.description
     this._profilePicture = properties.profilePicture ?? 'profile.jpg'
     this._isVerified = properties.isVerified ?? false
+
+    this.validate()
+  }
+
+  validate (): void {
+    AccountValidatorFactory.createAccountValidator().validate(this)
   }
 
   get name (): string { return this._name }
